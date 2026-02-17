@@ -1,27 +1,70 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/PCWxquq3)
-# CS 362 Final Project
+# Chart Builder Testing & CI/CD Pipeline
 
-This repository contains the application you will work with for the CS 362 final project.  The application code itself is written in the `src/` directory, but it is factored in such a way that the application cannot be run directly from the `src/` directory.  Instead, the app must be built before it can be run.
+This project focused on implementing automated testing and a CI/CD pipeline for a web application that allows users to build charts (line, scatter, and bar charts) using the QuickChart API.
 
-A build process is already configured for the application using a tool called [Webpack](https://webpack.js.org/).  This build process can be used in two different ways, described below.  In either case, make sure you run the following command first to install all the app's dependencies:
-```
+The application allows users to:
+- Enter chart data
+- Configure chart options
+- Generate charts
+- Save charts to a gallery
+
+The primary goal of the project was to apply software engineering practices including automated testing, continuous integration, and team development workflows.
+
+---
+
+## My Contributions (sorensri)
+
+My work on this project focused on UI integration testing and test environment setup.
+
+Contributions include:
+
+- Implemented integration test for chart generation workflow
+- Implemented integration test verifying “clear chart data” behavior
+- Implemented integration test verifying alert behavior for insufficient data
+- Implemented integration test for adding values in the chart builder UI
+- Installed and configured `jest-dom` testing utilities
+
+These tests were written using Jest and DOM Testing Library to simulate user interaction with the application interface.
+
+---
+
+## Testing Stack
+
+- Jest
+- DOM Testing Library
+- JSDOM
+- Cypress (project-wide)
+- GitHub Actions (project-wide)
+
+---
+
+## Repository Context
+
+This repository is a fork of a team project completed for a software engineering course focused on:
+
+- Automated testing strategies
+- CI/CD pipelines
+- Pull-request based workflows
+- Code review practices
+
+Original repository:
+https://github.com/OSU-CS362-W24/final-project-362finalproj
+
+---
+
+## Running the Project
+
+Install dependencies:
+```bash
 npm install
 ```
 
-## Running the app through the development server
-
-The app can be run through a development server that will automatically build the app and then serve it.  The development server can be started with the command:
-```
+Start the application:
+```bash
 npm start
 ```
 
-Once the development server is running, it will print out an HTTP URL you can use to access the app through the development server.  The development server should automatically open this URL in your browser for you, but if it doesn't, you can copy/paste the URL into your browser to experiment with the app.  Running the app through the development server will also be the easiest way to run end-to-end tests against the app.  In other words, you can configure Cypress to connect to the app through the running development server.
-
-## Building the app to files
-
-Running the app through the development server will not produce any build files.  If you want to generate files containing the built application, you can do this by running the command:
+Run tests:
+```bash
+npm test
 ```
-npm run build
-```
-
-Running this command will generate a directory called `dist/` that will contain HTML and JS files comprising the built application.  These are the files you'll want to package for release and deploy in the CI/CD pipeline you build for the app.
